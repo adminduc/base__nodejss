@@ -45,6 +45,8 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import connectDB from "./configs/database.js";
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();
 
 app.use(express.json());
@@ -62,17 +64,14 @@ app.use("/", async function (req, res) {
 
 // Notfound api
 app.use((req, res, next) => {
-  //   const error = new Error("API not found");
-  //   error.status = 404;
-  //   next(error);
   return res.status(404).json({
     message: "API không tồn tại, bỏ cái thói rình mò API người khác đi",
   });
 });
 
 // Required listening Express server
-app.listen(8080, (req, res) =>
-  console.log("Listen server running port " + 8080)
+app.listen(process.env.VITE_PORT_KEY, (req, res) =>
+  console.log("Listen server running port " + process.env.VITE_PORT_KEY)
 );
 
 export const viteNodeApp = app;
