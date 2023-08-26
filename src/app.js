@@ -42,9 +42,9 @@
 // module.exports = app;
 
 import express from "express";
-import mongoose from "mongoose";
 import morgan from "morgan";
 import cors from "cors";
+import connectDB from "./configs/database.js";
 const app = express();
 
 app.use(express.json());
@@ -53,23 +53,7 @@ app.use(cors());
 app.use(morgan("tiny"));
 
 // Navigate Router
-const connectDB = async (req, res) => {
-  mongoose.set("strictQuery", false);
-  try {
-    const conn = await mongoose.connect(
-      "mongodb+srv://duc:duc@cluster0.z55kawt.mongodb.net/base_node",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-    return true;
-  } catch (err) {
-    console.error(`Error: ${err.message}`);
-    process.exit(1);
-  }
-};
+
 connectDB();
 app.use("/", async function (req, res) {
   res.writeHead(200, { "Content-Type": "text/plain" });
