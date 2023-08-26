@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-
-export const connectDB = async () => {
+mongoose.set("strictQuery", false);
+const connectDB = async () => {
   try {
     const conn = await mongoose.connect(
       "mongodb+srv://duc:duc@cluster0.z55kawt.mongodb.net/base_node",
@@ -21,3 +21,4 @@ export const connectDB = async () => {
     process.exit(1);
   }
 };
+export default connectDB;
