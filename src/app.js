@@ -1,46 +1,3 @@
-// const express = require("express");
-// const mongoose = require("mongoose");
-// const morgan = require("morgan");
-// const cors = require("cors");
-// const app = express();
-
-// app.use(morgan("tiny"));
-// app.use(cors());
-
-// const connectDB = async (req, res) => {
-//   try {
-//     const conn = await mongoose.connect(
-//       "mongodb+srv://duc:duc@cluster0.z55kawt.mongodb.net/base_node",
-//       {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true,
-//       }
-//     );
-//     console.log(`MongoDB Connected: ${conn.connection.host}`);
-//     return true;
-//   } catch (err) {
-//     console.error(`Error: ${err.message}`);
-//     process.exit(1);
-//   }
-// };
-// connectDB();
-// app.use("/", async function (req, res) {
-//   console.log(connectDB());
-//   res.writeHead(200, { "Content-Type": "text/plain" });
-//   res.end(`Hello World! `);
-// });
-// app.use("**", (req, res, next) => {
-//   return res.status(200).json({
-//     message: "API Not Found",
-//   });
-// });
-
-// app.listen(8080, (req, res) => {
-//   console.log("Listening on port 8080");
-// });
-
-// module.exports = app;
-
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
@@ -70,8 +27,8 @@ app.use((req, res, next) => {
 });
 
 // Required listening Express server
-app.listen(process.env.VITE_PORT_KEY, (req, res) =>
-  console.log("Listen server running port " + process.env.VITE_PORT_KEY)
+app.listen(process.env.PORT, (req, res) =>
+  console.log("Listen server running port " + process.env.PORT)
 );
 
 export const viteNodeApp = app;
