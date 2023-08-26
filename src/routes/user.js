@@ -1,8 +1,8 @@
 import express from "express";
 import checkPermission, {
   checkPermissionMember,
-} from "../middlewares/checkPermission";
-import { create, get, getAll, remove, update } from "../controllers/user";
+} from "../middlewares/checkPermission.js";
+import { create, get, getAll, remove, update } from "../controllers/user.js";
 
 const router = express.Router();
 

@@ -1,7 +1,6 @@
-import User from "../models/user";
-import Jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import { filterValidToken } from "../controllers/jwt-service";
+import User from "../models/user.js";
+import { filterValidToken } from "../controllers/jwt-service.js";
 dotenv.config();
 
 const { JWT_ACCESS_TOKEN_KEY } = process.env;

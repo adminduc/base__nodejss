@@ -1,9 +1,11 @@
 import express from "express";
 import multer from "multer";
-import { CloudinaryStorage } from "multer-storage-cloudinary";
-import { deleteImage, uploadImage } from "../controllers/upImages";
-import cloudinary from "../config/cloudinary";
 import dotenv from "dotenv";
+import { CloudinaryStorage } from "multer-storage-cloudinary";
+
+import { deleteImage, uploadImage } from "../controllers/upImages.js";
+import cloudinary from "../configs/cloudinary.js";
+
 dotenv.config();
 const {
   CLOUNDINARY_NAME_FOLDER,

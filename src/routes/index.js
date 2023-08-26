@@ -1,10 +1,10 @@
 import express from "express";
-import routerUser from "./user";
-import routerProduct from "./product";
-import routerCategories from "./category";
-import routerAuth from "./auth";
-import routerToken from "./token";
-import upImages from "./upImages";
+import routerUser from "./user.js";
+import routerProduct from "./product.js";
+import routerCategories from "./category.js";
+import routerAuth from "./auth.js";
+import routerToken from "./token.js";
+import upImages from "./upImages.js";
 
 const Router = express.Router();
 

@@ -1,6 +1,6 @@
 import Jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import User from "../models/user";
+import User from "../models/user.js";
 dotenv.config();
 
 const { JWT_ACCESS_TOKEN_KEY, JWT_REFRESH_TOKEN_KEY, JWT_TOKEN_TIME } =

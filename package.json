@@ -8,7 +8,9 @@
   "type": "module",
   "main": "./src/app.js",
   "scripts": {
-    "server": "nodemon ./src/app.js"
+    "server": "nodemon ./src/app.js",
+    "vite": "vite",
+    "build": "build vite"
   },
   "dependencies": {
     "cors": "^2.8.5",

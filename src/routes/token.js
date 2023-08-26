@@ -1,5 +1,5 @@
 import express from "express";
-import { checkToken } from "../controllers/jwt-service";
+import { checkToken } from "../controllers/jwt-service.js";
 const router = express.Router();
 
 // Token Authentication

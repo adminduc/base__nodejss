@@ -1,5 +1,5 @@
-import User from "../models/user";
-import userSchema from "../schemas/user";
+import User from "../models/user.js";
+import userSchema from "../schemas/user.js";
 
 export const getAll = async (req, res) => {
   try {

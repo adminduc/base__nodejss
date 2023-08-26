@@ -1,8 +1,8 @@
-import User from "../models/user";
-import { signinSchema, signupSchema } from "../schemas/auth";
+import User from "../models/user.js";
 import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
-import { signAccessToken, signRefreshToken } from "./jwt-service";
+import { signinSchema, signupSchema } from "../schemas/auth.js";
+import { signAccessToken, signRefreshToken } from "./jwt-service.js";
 dotenv.config();
 export const signup = async (req, res) => {
   try {

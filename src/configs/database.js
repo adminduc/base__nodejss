@@ -1,19 +1,22 @@
 import mongoose from "mongoose";
-const connectDB = async (req, res) => {
-  mongoose.set("strictQuery", false);
+mongoose.set("strictQuery", false);
+const connectDB = async (uri) => {
   try {
-    const conn = await mongoose.connect(
-      "mongodb+srv://duc:duc@cluster0.z55kawt.mongodb.net/base_node",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-    return true;
+    const conn = await mongoose.connect(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log(`
+    ===========================
+    MongoDB Connected !!!
+    NAME_DB::: ${conn.connection.name}
+    URL::: ${uri}
+    ===========================
+    `);
   } catch (err) {
     console.error(`Error: ${err.message}`);
     process.exit(1);
   }
 };
+
 export default connectDB;
